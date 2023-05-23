@@ -8,7 +8,17 @@ The concept involves embedding a signature and a public key within a QR code whi
 
 This system functions well for an "over-the-phone Multi-Factor Authentication (MFA)" where voice and phone number act as additional factors contributing to the trust between two communicating parties.
 
-![Image of the output of the program.](img.png)
+However, it is strongly advised not to utilize this in real-world scenarios due to numerous cryptographic vulnerabilities. This repository is solely intended for demonstration purposes. 
+
+### Challange-Response POC
+
+![Example command line output](cra-poc-output.png) 
+
+### Challange-Response Demo
+
+![Example command line output](cra-demo-output.png) 
+
+(Appologies for the garish looking output.)
 
 ## Usage
 ### Challange-Response POC
@@ -107,8 +117,6 @@ In the authentication process, `User1` initiates the process by creating a QR co
 The `cra-demo.py` script extends the `cra-poc.py` script into a functional command-line system. The core functionalities of the system are encapsulated within the `AuthenticationSystem` class, which includes methods for key pair creation, QR code generation and decoding, challenge generation, response verification, and checksum calculation.
 
 Through the command-line interface, users can generate a QR code (including the key pair), generate a challenge, and verify responses. Each user in the interaction has a unique role: `User1` initiates the process by generating a QR code and responding to challenges, while `User2` scans the QR code, generates challenges, and verifies the responses.
-
-[Example command line output](img.png) 
 
 Please refer to the code comments for more details on each function.
 
